@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      html { 
+        background: url(images/portland.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+      }
+      div.plyr {
+        width:100%;
+        position: absolute;
+        bottom:0px;
+        left:0px;
+      }
+      span.plyr__progress{
+        display:none!important;
+      }
+      span.plyr__time{
+        display:none!important;
+      }
+      img#centered{
+        max-width:100%;
+      }
+      div#container{
+        display:none;
+        height:50%;
+        width:50%;
+        overflow:auto;
+        margin-left:auto;
+        margin-right:auto;
+      }
+    </style>
+    <meta charset="utf-8">
+    <title>Freform Portland Player</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/2.0.11/plyr.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="id3">
+      <h2 id="info">Test Line of Text</h2>
+    </div>
+    <div id="container">
+      <img id="centered" src="images/Freeform.png">
+    </div>
+    <audio id="audio" controls>
+    <source src="http://74.63.72.20:8950/live" type="audio/mp3">
+    </audio>
+    <script src="https://cdn.plyr.io/2.0.11/plyr.js"></script>
+    <script src="https://cdn.plyr.io/2.0.11/demo.js"></script>
+    <script src="https://cdn.rangetouch.com/0.0.9/rangetouch.js" async></script>
+    <script type="text/javascript">
+      var meta = document.getElementById("audio").mozGetMetadata();
+      document.getElementById("info").innerHTML = meta
+    </script>
+    <script>if(window.shr) { window.shr.setup({ count: { classname: 'btn__count' } }); }</script>
+  </body>
+</html>
